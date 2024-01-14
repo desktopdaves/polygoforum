@@ -32,12 +32,19 @@ Lastly, run with:
 
 You will need a proxy such as nginx to access the forum on the public internet.
 
+### Docker
+
+Build the docker image using the following command
+```
+docker build -t agreper .
+```
+
+You can then run the docker image using the docker-compose.yml file or the following command
+```
+docker run -p 8000:8000 -v "$(pwd)/forum.db:/app/forum.db" agreper
+```
+*Please note you should use a reverse proxy like caddy or nginx this is meerly for testing purposes
+
 ## Upgrading
 
 To upgrade from a previous version, run ``upgrade_sqlite.sh``
-
-## Screenshots
-
-![Index](https://static.agreper.com/index.png)
-![Forum](https://static.agreper.com/forum.png)
-![Admin panel](https://static.agreper.com/admin_panel.png)
