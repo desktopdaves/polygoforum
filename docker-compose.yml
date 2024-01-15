@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  agreper:
+    container_name: agreper
+    environment:
+      - FORUM_DB=forum.db # Name of the database to be used
+      - ADMIN_USERNAME=administrator # Admin username used on forum creation
+      - ADMIN_PASSWORD=agreper # Admin password used on forum creation
+    ports:
+      - 8000:8000
+    volumes:
+      - /root/app:/app/forum.db
+    restart: unless-stopped
+    image: agreper
