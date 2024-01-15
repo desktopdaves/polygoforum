@@ -10,6 +10,6 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - /root/app:/app/forum.db
+      - /root/app:/app/forum.db # Set the volume if you already have a database file and would like to use that one
     restart: unless-stopped
     image: agreper
